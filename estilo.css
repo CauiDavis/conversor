@@ -17,8 +17,16 @@ h2{
 .converter:hover{
     background-color: chocolate;
     color: beige;
+    cursor: pointer;
 }
 .limpar:hover{
     background-color: chartreuse;
     color:beige;
+    cursor: pointer;
+}
+body{
+    background-color:rgba(214, 123, 191, 0.397);
+}
+h4{
+    color: blueviolet;
 }
