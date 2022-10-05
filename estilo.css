@@ -1,5 +1,5 @@
 .conversor{
-    border: solid;
+    border: solid 1px;
     border-color: black;
     width: 400px;
     padding: 50px;
@@ -7,8 +7,15 @@
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
-    background-color: aquamarine;
+    background-color: #1bce92;
     box-sizing: border-box;
+    border-radius: 5%;
+}
+.borda{
+    border-radius: 5%;
+}
+#sombra{
+    text-shadow: black 1px 1px 1px,1px -1px 1px,-1px 1px 1px, -1px -1px 1px;
 }
 h2{
     color: brown;
@@ -25,7 +32,7 @@ h2{
     cursor: pointer;
 }
 body{
-    background-color:rgba(214, 123, 191, 0.397);
+    background-color:rgba(190, 14, 146, 0.397);
 }
 h4{
     color: blueviolet;
