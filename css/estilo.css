@@ -85,3 +85,10 @@ input:focus {
 .unselectable {
   pointer-events: none;
 }
+
+@media screen and (max-width: 468px){
+  .conversor {
+    width: 22rem;
+    padding: 1rem;
+  }
+}
