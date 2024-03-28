@@ -1,16 +1,18 @@
 :root {
-    --white: #fffbfe;
-    --black: #1D192B;
-    --red: #dc362e;
-    --darkRed: #410E0B;
-    --lightRedPrimary: #F2B8B5;
-    --lightRedSecundary: #F2B8B5;
+  --white: #fffbfe;
+  --black: #1d192b;
+  --red: #dc362e;
+  --darkRed: #410e0b;
+  --lightRedPrimary: #f2b8b5;
+  --lightRedSecundary: #f2b8b5;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 .conversor {
   width: 25rem;
   display: flex;
@@ -37,12 +39,12 @@ h2 {
 }
 
 button {
-    background-color: var(--darkRed);
-    border: none;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    color: var(--white);
-    transition: color 0.4s;
+  background-color: var(--darkRed);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: var(--white);
+  transition: color 0.4s;
 }
 
 .converter:hover {
@@ -80,5 +82,5 @@ input:focus {
 }
 
 .unselectable {
-    pointer-events: none;
+  pointer-events: none;
 }
