@@ -1,76 +1,50 @@
+let DolarData = ["USD-BRL", "USDBRL"];
+let EuroData = ["EUR-BRL", "EURBRL"];
+let LibrasData = ["GBP-BRL", "GBPBRL"];
+let IenisData = ["JPY-BRL", "JPYBRL"];
+let Dolar;
+let Euro;
+let Libras;
+let Ienis;
 
-
-let urlDolar = "https://economia.awesomeapi.com.br/last/USD-BRL";
-let urlEuro = "https://economia.awesomeapi.com.br/last/EUR-BRL";
-let urlLibras = "https://economia.awesomeapi.com.br/last/GBP-BRL";
-let urlIenis = "https://economia.awesomeapi.com.br/last/JPY-BRL";
-
-let dolar;
-let euro;
-let libras;
-let ienis;
-
-function getDolar() {
-    fetch(urlDolar)
-        .then(response => response.json())
-        .then(high => {
-            dolar = high.USDBRL.high;
-        })
-        .catch((erro) => {
-            console.log("erro" + erro)
-        })
+async function getMoney(money) {
+    try {
+        const url = `https://economia.awesomeapi.com.br/last/${money[0]}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        return data[money[1]]["high"];
+    } catch (error) {
+        console.error("erro" + error);
+        throw error;
+    }
 }
-getDolar();
 
-function getEuro() {
-    fetch(urlEuro)
-        .then(response => response.json())
-        .then(high => {
-            euro = high.EURBRL.high;
-        })
-        .catch((erro) => {
-            console.log("erro" + erro)
-        })
+async function returnData() {
+    try {
+        Dolar = await getMoney(DolarData);
+        Euro = await getMoney(EuroData);
+        Libras = await getMoney(LibrasData);
+        Ienis = await getMoney(IenisData);
+    } catch (error) {
+        console.error(error);
+    }
 }
-getEuro();
-
-function getLibras() {
-    fetch(urlLibras)
-        .then(response => response.json())
-        .then(high => {
-            libras = high.GBPBRL.high;
-        })
-        .catch((erro) => {
-            console.log("erro" + erro)
-        })
-}
-getLibras();
-
-function getIenis() {
-    fetch(urlIenis)
-        .then(response => response.json())
-        .then(high => {
-            ienis = high.JPYBRL.high;
-        })
-        .catch((erro) => {
-            console.log("erro" + erro)
-        })
-}
-getIenis();
+returnData();
 
 function converter() {
-    var reais = parseFloat(document.getElementById("valor-real").value);
+    let Reais = parseFloat(document.getElementById("valor-real").value);
 
-    if (isNaN(reais)) {
+    if (isNaN(Reais)) {
         alert("Digite um valor válido");
         return;
     }
 
-    document.getElementById("valor-dolar").value = (reais / dolar).toFixed(2) + " dolares americanos";
-    document.getElementById("valor-euro").value = (reais / euro).toFixed(2) + " euros";
-    document.getElementById("valor-libras").value = (reais / libras).toFixed(2) + " libras libaneses";
-    document.getElementById("valor-ienis").value = (reais / ienis).toFixed(2) + " ienes japonês";
+    document.getElementById("valor-dolar").value = (Reais / Dolar).toFixed(2) + " dolares americanos";
+    document.getElementById("valor-euro").value = (Reais / Euro).toFixed(2) + " euros";
+    document.getElementById("valor-libras").value = (Reais / Libras).toFixed(2) + " libras libaneses";
+    document.getElementById("valor-ienis").value = (Reais / Ienis).toFixed(2) + " ienes japoneses";
 }
+
 function limpar() {
     document.getElementById("valor-real").value = "";
     document.getElementById("valor-dolar").value = "";
