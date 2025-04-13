@@ -1,7 +1,7 @@
 # conversor
 
 <div align="center">
-<img src="https://github.com/CauiDavis/pokedex/raw/main/images/pokebola.png" width="250" />
+<img src="https://github.com/CauiDavis/conversor/raw/main/images/coin.jpeg" width="250" />
 
 <div data-badges>
   <img src="https://img.shields.io/github/stars/CauiDavis/conversor?style=for-the-badge" alt="GitHub stars" />
